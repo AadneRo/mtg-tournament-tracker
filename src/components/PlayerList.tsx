@@ -1,5 +1,3 @@
-import { Player } from "./../types";
-import { styled } from "@mui/material/styles";
 import { DataContext } from "../services/Provider";
 import { useContext } from "react";
 import {
