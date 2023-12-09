@@ -6,16 +6,21 @@ export type Player = {
 };
 
 export type Match = {
-  id: number;
   player1: Player;
   player2: Player;
   player1Score: number;
   player2Score: number;
-  winner: Player;
+  result: "p1" | "p2" | "draw" | null;
+};
+
+export type Round = {
+  pairings: Match[];
+  roundNumber: number;
 };
 
 export type Tournament = {
   id: number;
-  name: string;
   matches: Match[];
+  allPlayers: Player[];
+  dropedPlayers: Player[];
 };

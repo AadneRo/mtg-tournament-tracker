@@ -4,10 +4,6 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-import PlayerInput from "./../PlayerInput";
-import PlayerList from "./../PlayerList";
-import RoundControls from "./../RoundControls/RoundControls";
-
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -56,22 +52,19 @@ function TabContainer() {
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Player Controls" {...a11yProps(0)} />
-          <Tab label="Current Round" {...a11yProps(1)} />
-          <Tab label="Result" {...a11yProps(2)} />
+          <Tab label="Item One" {...a11yProps(0)} />
+          <Tab label="Item Two" {...a11yProps(1)} />
+          <Tab label="Item Three" {...a11yProps(2)} />
         </Tabs>
       </Box>
-
       <CustomTabPanel value={value} index={0}>
-        <PlayerInput />
-        <PlayerList canEdit />
+        Item One
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <RoundControls />
+        Item Two
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <div>... list of match results</div>
-        <button>Download Results</button>
+        Item Three
       </CustomTabPanel>
     </Box>
   );

@@ -7,19 +7,10 @@ import TabContainer from "./components/TabContainer/TabContainer";
 import DataProvider from "./services/Provider";
 
 function App() {
-  const [players, setPlayers] = useState<Player[]>([]);
-
-  function addPlayer(player: Player) {
-    setPlayers([...players, player]);
-  }
-
   return (
     <div className="App">
       <DataProvider>
         <TabContainer />
-
-        <PlayerInput addPlayer={addPlayer} />
-        <PlayerList players={players} />
       </DataProvider>
     </div>
   );
