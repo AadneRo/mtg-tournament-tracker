@@ -3,6 +3,8 @@ import PlayerInput from "./components/PlayerInput";
 import { Player } from "./types";
 import { useState } from "react";
 import PlayerList from "./components/PlayerList";
+import TabContainer from "./components/TabContainer/TabContainer";
+import DataProvider from "./services/Provider";
 
 function App() {
   const [players, setPlayers] = useState<Player[]>([]);
@@ -13,8 +15,12 @@ function App() {
 
   return (
     <div className="App">
-      <PlayerInput addPlayer={addPlayer} />
-      <PlayerList players={players} />
+      <DataProvider>
+        <TabContainer />
+
+        <PlayerInput addPlayer={addPlayer} />
+        <PlayerList players={players} />
+      </DataProvider>
     </div>
   );
 }

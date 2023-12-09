@@ -1,7 +1,7 @@
 export type Player = {
-  id: number;
+  id: string;
   name: string;
-  OMF: boolean;
+  isOMF: boolean;
   score: number;
 };
 
