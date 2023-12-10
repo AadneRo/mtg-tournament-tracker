@@ -72,6 +72,7 @@ function TabContainer() {
       <CustomTabPanel value={value} index={2}>
         <div>... list of match results</div>
         <button>Download Results</button>
+        <button>restart</button>
       </CustomTabPanel>
     </Box>
   );

@@ -1,9 +1,18 @@
 import { Player, Round, Match } from "./../types";
 
 export function createRound(players: Player[], previousRound?: Round): Round {
+  // Add a bye player to the end of the players array if it's an odd number
+  if (players.length % 2 === 1) {
+    players.push({ id: "BYE", name: "BYE", isOMF: false, score: 0 });
+  }
+
   if (!previousRound) {
+    const pairings = randomlyPairPlayers(players);
+
+    console.log(pairings);
+
     return {
-      pairings: randomlyPairPlayers(players),
+      pairings,
       roundNumber: 1,
     };
   }
